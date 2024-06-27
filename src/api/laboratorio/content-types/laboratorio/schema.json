@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "laboratorios",
+  "info": {
+    "singularName": "laboratorio",
+    "pluralName": "laboratorios",
+    "displayName": "Laboratorio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "capacidad": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "equipos": {
+      "type": "string"
+    },
+    "disponibilidads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::disponibilidad.disponibilidad",
+      "mappedBy": "laboratorio"
+    },
+    "reservas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reserva.reserva",
+      "mappedBy": "laboratorio"
+    }
+  }
+}

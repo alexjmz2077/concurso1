@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disponibilidads",
+  "info": {
+    "singularName": "disponibilidad",
+    "pluralName": "disponibilidads",
+    "displayName": "Disponibilidad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start_time": {
+      "type": "time"
+    },
+    "end_time": {
+      "type": "time"
+    },
+    "laboratorio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::laboratorio.laboratorio",
+      "inversedBy": "disponibilidads"
+    },
+    "dia": {
+      "type": "date"
+    }
+  }
+}
